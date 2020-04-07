@@ -27,3 +27,6 @@ expandattribute update_provider false;
 # of the OMAPI services. Remove once the RELEASE_NATIVE_OMAPI flag is cleaned
 # up and the app-based implementation is removed.
 attribute omapi_server;
+
+# All types used for sdcard_posix context= mounts.
+attribute sdcard_posix_contextmount_type;
