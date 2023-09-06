@@ -22,6 +22,7 @@ type_transition system_server system_data_file:sock_file system_ndebug_socket "n
 # Create a socket for connections from zygotes.
 type_transition system_server system_data_file:sock_file system_unsolzygote_socket "unsolzygotesocket";
 
+allow system_server tmpfs:file { map read write };
 allow system_server zygote_tmpfs:file { map read write };
 allow system_server appdomain_tmpfs:file { getattr map read write };
 allow system_server zygote:memfd_file { map read write };
