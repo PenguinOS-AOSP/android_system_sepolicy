@@ -2262,7 +2262,7 @@ neverallow {
   -dexopt_chroot_setup
   -init
   userdebug_or_eng(`-overlay_remounter')
-  userdebug_or_eng(`-zygote')
+  -zygote
 } {
   system_file_type
   vendor_file_type
