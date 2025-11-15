@@ -890,6 +890,7 @@ neverallow {
   appdomain
   -system_app
   -device_as_webcam
+  -platform_app
 } usb_uvc_enabled_prop:file no_rw_file_perms;
 
 neverallow {
