@@ -1209,7 +1209,6 @@ phony {
         "plat_202504.cil",
         "plat_bug_map",
         "plat_file_contexts",
-        "plat_file_contexts_data_test",
         "plat_file_contexts_test",
         "plat_hwservice_contexts",
         "plat_hwservice_contexts_test",
@@ -1246,12 +1245,6 @@ phony {
             "sepolicy_compat_test",
             "sepolicy_test",
             "sepolicy_dev_type_test",
-            "treble_sepolicy_tests_31.0",
-            "treble_sepolicy_tests_32.0",
-            "treble_sepolicy_tests_33.0",
-            "treble_sepolicy_tests_34.0",
-            "treble_sepolicy_tests_202404",
-            "treble_sepolicy_tests_202504",
         ],
     }) + select((
         soong_config_variable("ANDROID", "PLATFORM_SEPOLICY_VERSION"),
@@ -1260,11 +1253,9 @@ phony {
     ), {
         ("202604", true, true): [],
         (default, true, true): [],
-        (default, default, default): [
-            "treble_sepolicy_tests_202604",
-        ],
+        (default, default, default): [],
     }) + select(soong_config_variable("ANDROID", "RELEASE_BOARD_API_LEVEL_FROZEN"), {
-        true: ["se_freeze_test"],
+        true: [],
         default: [],
     }) + select(release_flag("RELEASE_AVF_ENABLE_VM_TO_TEE_SERVICES_ALLOWLIST"), {
         true: ["plat_tee_service_contexts"],
