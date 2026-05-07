@@ -479,6 +479,7 @@ read_logd(appdomain)
 
 allow appdomain zygote:unix_dgram_socket write;
 allow appdomain zygote_next:unix_dgram_socket write;
+allow appdomain zygote_socket:unix_stream_socket { getopt getattr };
 
 allow appdomain console_device:chr_file { read write };
 
