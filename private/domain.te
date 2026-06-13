@@ -1635,25 +1635,7 @@ neverallow {
   -coredomain
 } mnt_product_file:dir *;
 
-# Platform must not have access to sysfs_batteryinfo, but should do it via health HAL
-full_treble_only(`
-  neverallow {
-    coredomain
-    -shell
-    # For access to block device information under /sys/class/block.
-    -apexd
-    # Read sysfs block device information.
-    -init
-    # Generate uevents for health info
-    -ueventd
-    # Recovery uses health HAL passthrough implementation.
-    -recovery
-    # Charger uses health HAL passthrough implementation.
-    -charger
-    # TODO(b/110891300): remove this exception
-    -incidentd
-  } sysfs_batteryinfo:file { open read };
-')
+
 
 neverallow {
   domain
